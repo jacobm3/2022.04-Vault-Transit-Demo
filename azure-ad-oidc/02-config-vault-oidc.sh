@@ -21,6 +21,7 @@ vault write auth/oidc/role/${VAULT_LOGIN_ROLE} \
    oidc_scopes="https://graph.microsoft.com/.default"
 
 # Set up a Vault external group for the AD group
+# This expects the AD group to already exist, in this case, "pin-demo-ad-group"
 export AD_GROUP_ID=$(az ad group show \
    --group pin-demo-ad-group \
    --query objectId -o tsv)
