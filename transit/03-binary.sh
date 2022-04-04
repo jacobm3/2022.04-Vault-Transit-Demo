@@ -1,6 +1,7 @@
 #!/bin/bash
 
 set -e
+set -x
 
 FILE=$1
 
@@ -26,3 +27,5 @@ vault write -format=json transit/decrypt/pin-batch-01 \
                 ciphertext=@${FILE}.ciphertext  \
              | jq -r .data.plaintext | base64 -d > new.${FILE}
 
+# clean up
+rm ${FILE}.b64
