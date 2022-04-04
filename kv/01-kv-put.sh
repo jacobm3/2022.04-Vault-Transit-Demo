@@ -2,12 +2,6 @@
 
 export VAULT_NAMESPACE=pin-demo
 
-#vault secrets tune \
-#  -audit-non-hmac-response-keys=description \
-#  secret
-
-vault secrets enable -path=secret -version=2 kv
-
 vault kv put secret/hello foo=world excited=yes
 
 vault kv put secret/goodbye foo="cruel world" excited=no
