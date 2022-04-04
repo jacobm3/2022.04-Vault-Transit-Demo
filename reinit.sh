@@ -15,6 +15,7 @@ vault server -config=vault.hcl >vault.log 2>vault.err &
 sleep 1
 
 export VAULT_ADDR="https://localhost.theneutral.zone:8200"
+unset VAULT_NAMESPACE
 
 vault operator init -format=json -t 1 -n 1 | tee .init.json
 

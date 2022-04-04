@@ -37,3 +37,13 @@ EOF
 vault policy write pin-operator pin-operator-policy.hcl
 
 
+# policy
+cat > ns-admin-policy.hcl << EOF
+path "*" {
+  capabilities = ["create", "read", "update", "delete", "list", "sudo"]
+}
+EOF
+
+vault policy write ns-admin ns-admin-policy.hcl
+
+

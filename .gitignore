@@ -65,3 +65,5 @@ override.tf.json
 # example: *tfplan*
 
 data
+
+*.swp

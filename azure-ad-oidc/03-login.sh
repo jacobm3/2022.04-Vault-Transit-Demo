@@ -1,3 +1,3 @@
 #!/bin/bash
 
-vault login -method=oidc role=pin
+vault login -namespace=pin-demo -method=oidc role=pin
