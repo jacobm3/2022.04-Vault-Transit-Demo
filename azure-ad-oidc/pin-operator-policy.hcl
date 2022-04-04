@@ -1,6 +1,6 @@
 # kv secrets
 path "secret/*" {
-    capabilities = ["read", "list"]
+    capabilities = ["create", "read", "list", "update", "delete"]
 }
 
 # encryption
@@ -11,3 +11,9 @@ path "transit/encrypt/pin-batch-0001" {
 path "transit/decrypt/pin-batch-0001" {
    capabilities = [ "update" ]
 }
+
+path "transit/*" {
+   capabilities = [ "list", "read", "update" ]
+}
+
+
