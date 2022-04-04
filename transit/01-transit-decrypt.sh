@@ -1,8 +1,14 @@
 #!/bin/bash
 
+ORIG="4111 1111 1111 1111"
+
+echo
+echo original plaintext: $ORIG
+echo
+
 # Encrypt
 CIPHERTEXT=$( vault write -format=json transit/encrypt/pin-batch-01 \
-                plaintext=$(base64 <<< "4111 1111 1111 1111") \
+                plaintext=$(base64 <<< $ORIG ) \
              | jq -r .data.ciphertext )
 
 echo
